@@ -8,7 +8,11 @@
 </head>
 
 <body>
-
+    <form action="" method="post">
+        <input type="text" name="institution">
+        <input type="file" name="proof" id="">
+        <button type="submit">Beli</button>
+    </form>
 </body>
 
 </html>

@@ -17,6 +17,11 @@ class User extends CORE_Controller
 
     public function login()
     {
+        if ($this->session->has_userdata('username') && $this->session->has_userdata('email')) {
+			redirect(base_url());
+			exit;
+        }
+
         $email = $this->post('email');
         $password = $this->post('password');
 
@@ -37,7 +42,7 @@ class User extends CORE_Controller
 
     public function register()
     {
-        if (empty($this->POST('registrasi'))) {
+        if (!empty($this->post('registrasi'))) {
             $this->load->library('form_validation');
             $this->form_validation->set_rules(
                 'email',

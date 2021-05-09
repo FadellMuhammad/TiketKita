@@ -53,8 +53,14 @@ $route['default_controller'] = 'catalog';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['user/:any'] = 'redirect';
+$route['ticket/:any'] = 'redirect';
+
 $route['login'] = 'user/login';
 $route['logout'] = 'user/logout';
 $route['register'] = 'user/register';
 
 $route['catalog/(:num)'] = 'catalog/detail/$1';
+$route['catalog/(:num)/ticket'] = 'ticket/buy_ticket/$1';
+
+$route['ticket'] = 'ticket';

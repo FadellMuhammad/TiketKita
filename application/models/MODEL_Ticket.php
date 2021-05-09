@@ -11,9 +11,27 @@ class MODEL_Ticket extends CORE_Model
         $this->data['primary_key'] = 'id';
     }
 
-    public function get_tickets($id){
-        return $this->get_rows(array(
-            'owner' => $id
-        ));
+    public function insert_ticket($data){
+        return $this->insert($data);
+    }
+
+    public function get_tickets($id)
+    {
+        return $this->get_rows_join(
+            '*, 
+            user.name AS username, 
+            event.name AS eventname,
+            event.description AS eventdescription,
+            event.id AS eventid,
+            event.date_start AS eventstart,
+            event.date_created AS eventcreated',
+            array(
+                'event' => $this->data['table_name'] . '.event = event.id',
+                'user' => $this->data['table_name'] . '.owner = user.email'
+            ),
+            array(
+                'owner' => $id
+            )
+        );
     }
 }

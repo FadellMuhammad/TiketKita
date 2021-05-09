@@ -16,9 +16,9 @@ class CORE_Model extends CI_Model
 		return $this->db->get($this->data['table_name'])->row();
 	}
 
-	public function get_rows($condition = null)
+	public function get_rows($condition = '')
 	{
-		if (is_array($condition))
+		if ($condition != '')
 			$this->db->where($condition);
 		return $this->db->get($this->data['table_name'])->result();
 	}
@@ -32,5 +32,15 @@ class CORE_Model extends CI_Model
 	{
 		$this->db->where($this->data['primary_key'], $key);
 		return $this->db->update($this->data['table_name'], $data);
+	}
+
+	public function get_rows_join($select, $joins, $condition = '')
+	{
+		$this->db->select($select);
+		foreach ($joins as $table => $on)
+			$this->db->join($table, $on);
+		if ($condition != '')
+			$this->db->where($condition);
+		return $this->db->get($this->data['table_name'])->result();
 	}
 }

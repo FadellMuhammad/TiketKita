@@ -9,6 +9,7 @@
 
 <body>
     <p><?= $event->name ?></p>
+    <a href="<?= base_url() . 'catalog/' . $event->id . '/ticket' ?>">Beli Tiket</a>
 </body>
 
 </html>
