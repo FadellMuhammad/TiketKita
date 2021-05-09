@@ -8,7 +8,7 @@ RewriteEngine On
 </Files>
 
 # Protect application and system files from being viewed
-RewriteRule ^(?:application|modules|system)\b.* index.php/$0 [L]
+RewriteRule ^(?:application|modules|system)\b.* index.php/$0 [L,F]
 
 # Allow any files or directories that exist to be displayed directly
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -19,16 +19,16 @@ RewriteCond %{REQUEST_FILENAME} !-d
     SetEnvIf Request_URI "^.*" CI_ENV=development
     
     # Rewrite all other URLs to /TiketKita/index.php/URL on Development
-    RewriteCond %{ENV:CI_ENV} development
+    RewriteCond %{ENV:CI_ENV} "=development"
     RewriteRule ^(.*)$ /TiketKita/index.php/$1 [L]
 
     # Rewrite all other URLs to index.php/URL on Production
-    RewriteCond %{ENV:CI_ENV} production
+    RewriteCond %{ENV:CI_ENV} "=production"
     RewriteRule ^(.*)$ /index.php/$1 [L]
 </IfModule>
 
 <IfModule !mod_setenvif.c>
-    # Default environtment is development if env mod is none
+    # Default environtment is development if env module is none
     # Rewrite all other URLs to /TiketKita/index.php/URL on Development
     RewriteRule ^(.*)$ /TiketKita/index.php/$1 [L]
 </IfModule>

@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_m extends CORE_Model{
+class MODEL_User extends CORE_Model
+{
 
     public function __construct()
     {
@@ -13,11 +14,12 @@ class User_m extends CORE_Model{
     public function cek_login($user)
     {
         $query = $this->get_row(['email' => $user['email']]);
-        if(!isset($query)){
+        if (!isset($query)) {
             return false;
         }
         if (password_verify($user['password'], $query->password)) {
             $array = array(
+                'username' => $query->name,
                 'email' => $query->email
             );
             $this->session->set_userdata($array);
@@ -29,7 +31,7 @@ class User_m extends CORE_Model{
     public function register($user)
     {
         $query = $this->get_row(['email' => $user['email']]);
-        if(isset($query)){
+        if (isset($query)) {
             return false;
         }
         $data = [
