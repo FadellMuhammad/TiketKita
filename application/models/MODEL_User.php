@@ -11,7 +11,7 @@ class MODEL_User extends CORE_Model
         $this->data['primary_key'] = 'email';
     }
 
-    public function cek_login($user)
+    public function login($user)
     {
         $query = $this->get_row(['email' => $user['email']]);
         if (!isset($query)) {
@@ -30,16 +30,11 @@ class MODEL_User extends CORE_Model
 
     public function register($user)
     {
-        $query = $this->get_row(['email' => $user['email']]);
-        if (isset($query)) {
-            return false;
-        }
         $data = [
             'email' => $user['email'],
             'password' => password_hash($user['password'], PASSWORD_DEFAULT),
         ];
-        $cek = $this->user_m->insert($data);
-        if ($cek) {
+        if ($this->insert($data)) {
             return true;
         }
         return false;
