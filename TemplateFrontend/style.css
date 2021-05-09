@@ -27,15 +27,23 @@ body{
 }
 
 img{
-    width: 500px;
+    width: 400px;
+    margin: 100px 320px 20px 300px;
+}
+
+.flex-1 p{
+    font-weight: 900;
+    color: white;
+    font-size: 100px;
+    margin: auto 240px;
 }
 
 .login-box{
     background-color: white;
     width: 40vw;
-    height: 40vw;
+    height: 43.5vw;
     padding: 80px 60px;
-    border-radius: 20px;
+    border-radius: 20px 0 0 0;
 }
 
 .text-first{
