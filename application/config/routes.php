@@ -56,3 +56,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'user/login';
 $route['logout'] = 'user/logout';
 $route['register'] = 'user/register';
+
+$route['catalog/(:num)'] = 'catalog/detail/$1';

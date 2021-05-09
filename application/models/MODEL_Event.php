@@ -10,4 +10,11 @@ class MODEL_Event extends CORE_Model
         $this->data['table_name'] = 'event';
         $this->data['primary_key'] = 'id';
     }
+
+    public function get_event($id)
+    {
+        return $this->get_row(array(
+            $this->data['primary_key'] => $id
+        ));
+    }
 }

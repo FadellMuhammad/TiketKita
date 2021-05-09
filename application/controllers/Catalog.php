@@ -7,20 +7,25 @@ class Catalog extends CORE_Controller
 	public function __construct()
 	{
 		parent::__construct();
-        $this->data['username'] = $this->session->userdata('username');
-        $this->data['email'] = $this->session->userdata('email');
-        if(!isset($this->data['username']) && !isset($this->data['email'])){
-            $this->session->unset_userdata('username');
-            $this->session->unset_userdata('email');
-			redirect(base_url().'login');
-			exit;
-        }
+		$this->data = $this->getSession();
+		$this->load->model('model_event');
 	}
 
 	public function index()
 	{
-		$this->load->model('model_user');
+		$this->data['events'] = $this->model_event->get_rows();
 
-		$this->load->view('view_catalog');
+		$this->load->view('view_catalog', $this->data);
+	}
+
+	public function detail($id)
+	{
+		$this->data['event'] = $this->model_event->get_event($id);
+
+		if (is_null($this->data['event'])) {
+			redirect(base_url());
+			exit;
+		}
+		$this->load->view('view_event', $this->data);
 	}
 }

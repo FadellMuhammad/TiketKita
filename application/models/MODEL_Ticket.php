@@ -10,4 +10,10 @@ class MODEL_Ticket extends CORE_Model
         $this->data['table_name'] = 'ticket';
         $this->data['primary_key'] = 'id';
     }
+
+    public function get_tickets($id){
+        return $this->get_rows(array(
+            'owner' => $id
+        ));
+    }
 }
