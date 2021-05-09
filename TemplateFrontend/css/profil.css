@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-bundle{
+    display: flex;
+}
+
+.nav{
+    background-image: linear-gradient(#0F82AB,#0687B5);
+    width: 100%;
+    padding: 50px;
+}
+
+.card{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #0687B5;
+    width: 50vw;
+    height: 35vw;
+    border-radius: 20px;
+    margin-top: 3vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardinv{
+    position: absolute;
+    display: inherit;
+    align-items: flex-start;
+    justify-content: inherit;
+    width: inherit;
+    height: 37vw;
+    border-radius: inherit;
+    margin-top: inherit;
+    pointer-events: none;
+}
+
+img{
+    position: absolute;
+    width: 28vh;
+    border-radius: 100%;
+}
+
+.judul{
+    font-weight: 700;
+    font-size: 1.5vw;
+    text-align: center;
+    margin: 10px;
+    color: white;
+}
+
+.deskripsi{
+    background-color: rgb(252, 252, 252);
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-top: 12vh;
+}
+
+.deskripsi p{
+    padding: 10px;
+    color: black;
+}
+
+.login-input .group{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.login-input .group h4{
+    width: 40vh;
+}
+
+.input{
+    border-radius: 30px;
+    border-color: #c2bfbf70;
+    height: 30px;
+    width: 100%;
+}
+
+.btn{
+    background-color: #0F82AC;
+    color: white;
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    border-color: #04A5C2;
+}
