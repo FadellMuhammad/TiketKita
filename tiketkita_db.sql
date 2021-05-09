@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2021 at 05:51 PM
+-- Generation Time: May 09, 2021 at 09:49 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -32,6 +32,7 @@ CREATE TABLE `event` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `image_path` varchar(255) NOT NULL,
   `date_start` datetime NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -40,8 +41,10 @@ CREATE TABLE `event` (
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`id`, `name`, `description`, `date_start`, `date_created`) VALUES
-(1, 'Webinar Beasiswa', 'sebuah webinar membahas beasiswa untuk mahasiswa.', '2021-05-31 10:00:00', '2021-05-09 14:09:48');
+INSERT INTO `event` (`id`, `name`, `description`, `image_path`, `date_start`, `date_created`) VALUES
+(1, 'Webinar Beasiswa', 'sebuah webinar membahas beasiswa untuk mahasiswa.', '1.jpg', '2021-05-31 10:00:00', '2021-05-09 14:09:48'),
+(2, 'Webinar Teknologi', 'merupakan sebuah webinar tentang teknologi yang ada di fasilkom unsri. terdapat pemateri yang hebat!', '2.jpg', '2021-05-28 20:00:30', '2021-05-09 21:39:50'),
+(3, 'Webinar Desain', 'merupakan sebuah webinar tentang desain yang ada di fasilkom unsri.', '1.jpg', '2021-07-01 10:00:00', '2021-05-09 21:44:07');
 
 -- --------------------------------------------------------
 
@@ -53,10 +56,18 @@ CREATE TABLE `ticket` (
   `id` int(11) NOT NULL,
   `owner` varchar(255) NOT NULL,
   `event` int(11) NOT NULL,
+  `institution` varchar(255) NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `image_path` varchar(255) NOT NULL,
   `code` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ticket`
+--
+
+INSERT INTO `ticket` (`id`, `owner`, `event`, `institution`, `date_created`, `image_path`, `code`) VALUES
+(1, 'k@k.k', 1, 'Universitas Sriwijaya', '2021-05-09 21:28:55', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -110,13 +121,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
