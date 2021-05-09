@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-bundle{
+    display: flex;
+}
+
+.nav{
+    background-image: linear-gradient(#0F82AB,#0687B5);
+    width: 100%;
+    padding: 50px;
+}
+
+.card{
+    background-color: #0687B5;
+    width: 28vw;
+    height: 35vw;
+    border-radius: 20px;
+    margin-top: 3vw;
+    margin-left: 1vw;
+}
+
+.card1{
+    margin-left: 7vw;
+}
+
+img{
+    padding-top: 3vw;
+    width: 25vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+
+.judul{
+    font-weight: 700;
+    font-size: 1.5vw;
+    text-align: center;
+    margin: 10px;
+    color: white;
+}
+
+.deskripsi{
+    background-color: rgb(252, 252, 252);
+    width: 25vw;
+    height: 8vw;
+    border-radius: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.deskripsi p{
+    padding: 10px;
+    color: black;
+}
+
+.button{
+    background-color: #0F82AC;
+    color: white;
+    width: 5vw;
+    height: 2vw;
+    border-radius: 20px;
+    border-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: 1.5vw;
+    margin-top: 1vw;
+    font-weight: 500;
+    font-size: 1vw;
+}
