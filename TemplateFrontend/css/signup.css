@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(#0687B5,#04A5C2);
+    width: auto;
+    height: 49vw;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.box{
+    background-color: white;
+    width: 80vw;
+    height: 40vw;
+    margin: auto;
+    margin-top: 4vw;
+    border-radius: 20px;
+    box-shadow:  0 4px 15px 0 rgba(0, 0, 0, 0.281);
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3vw;
+}
+
+img{
+    width: 5vw;
+    height: fit-content;
+}
+
+.text .bold{
+    font-size: 1.5vw;
+    font-weight: 900;
+}
+
+.text p{
+    font-weight: 500;
+}
+
+.text{
+    margin: 1vw;
+}
+
+.signup-input{
+    margin: 5vw 25vw;
+}
+
+.input{
+    border-radius: 30px;
+    border-color: #c2bfbf70;
+    height: 30px;
+    width: 100%;
+}
+
+.name, .Username, .E-Mail, .Passwords, .Passwords-confirmation{
+    display: flex;
+    padding-bottom: 1vw;
+}
+
+.name h4{
+    padding-right: 5.85vw;
+}
+
+.Username h4{
+    padding-right: 4vw;
+}
+
+.E-Mail h4{
+    padding-right: 6vw;
+}
+
+.Passwords h4{
+    padding-right: 3.8vw;
+}
+
+.Passwords-confirmation h4{
+    padding-right: 0.8vw;
+    margin-bottom: 1vw;
+}
+
+.box-bottom p{
+    margin-top: 10px;
+    padding-left: 10px;
+    font-weight: lighter;
+    font-size: 10px;
+}
+
+.btn{
+    background-color: #0F82AC;
+    color: white;
+    width: 100%;
+    height: 37px;
+    border-radius: 15px;
+    border-color: #04A5C2;
+}
+
