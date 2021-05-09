@@ -16,6 +16,13 @@ class CORE_Model extends CI_Model
 		return $this->db->get($this->data['table_name'])->row();
 	}
 
+	public function get_rows($condition = null)
+	{
+		if (is_array($condition))
+			$this->db->where($condition);
+		return $this->db->get($this->data['table_name'])->result();
+	}
+
 	public function insert($data)
 	{
 		return $this->db->insert($this->data['table_name'], $data);

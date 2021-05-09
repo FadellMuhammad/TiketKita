@@ -21,4 +21,20 @@ class CORE_Controller extends CI_Controller
 	protected function method(){
 		return $this->input->method();
 	}
+
+	protected function getSession(){
+		$data = $this->session->userdata();
+		if (!isset($data['username']) && !isset($data['email'])) {
+			$this->destroySession();
+			redirect(base_url() . 'login');
+			exit;
+		}
+		return $data;
+	}
+
+	protected function destroySession(){
+		$this->session->unset_userdata('username');
+        $this->session->unset_userdata('email');
+        $this->session->sess_destroy();
+	}
 }

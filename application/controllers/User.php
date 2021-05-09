@@ -46,7 +46,7 @@ class User extends CORE_Controller
                 [
                     'required' => 'Email harus diisi',
                     'valid_email' => 'Gunakan Email valid',
-                    'is_unique' => 'email %s sudah digunakan'
+                    'is_unique' => 'Email %s sudah digunakan'
                 ]
             );
             $this->form_validation->set_rules(
@@ -85,9 +85,7 @@ class User extends CORE_Controller
 
     public function logout()
     {
-        $this->session->unset_userdata('username');
-        $this->session->unset_userdata('email');
-        $this->session->sess_destroy();
+        $this->destroySession();
         redirect(base_url());
         exit;
     }
