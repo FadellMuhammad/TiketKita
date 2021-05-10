@@ -77,32 +77,6 @@ img{
     width: 100%;
 }
 
-/* .name, .Username, .E-Mail, .Passwords, .Passwords-confirmation{
-    display: flex;
-    padding-bottom: 1vw;
-}
-
-.name h4{
-    padding-right: 5.85vw;
-}
-
-.Username h4{
-    padding-right: 4vw;
-}
-
-.E-Mail h4{
-    padding-right: 6vw;
-}
-
-.Passwords h4{
-    padding-right: 3.8vw;
-}
-
-.Passwords-confirmation h4{
-    padding-right: 0.8vw;
-    margin-bottom: 1vw;
-} */
-
 .box-bottom p{
     margin-top: 10px;
     padding-left: 10px;
